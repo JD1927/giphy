@@ -1,0 +1,21 @@
+.Gif {
+  display: grid;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 32px;
+  justify-content: center;
+  color: inherit;
+}
+
+.Gif:hover {
+  text-decoration: underline;
+}
+
+.Gif h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.Gif img {
+  object-fit: contain;
+}
