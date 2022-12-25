@@ -5,15 +5,20 @@ import './GifList.css';
 
 const GifList = ({ params }) => {
   const [gifs, setGifs] = useState([]);
+  const [loading, setLoading] = useState(false);
   const { keyword } = params;
 
   useEffect(() => {
     const fetchGifs = async () => {
+      setLoading(true);
       const requestedGifs = await getGifs({ keyword });
       setGifs([...requestedGifs]);
+      setLoading(false);
     }
     fetchGifs();
   }, [keyword]);
+
+  if (loading) return <span>Loading... 🌀</span>;
 
   return (
     <div className='GifList'>
