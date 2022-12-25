@@ -1,16 +1,25 @@
-import { Link, Route } from 'wouter';
+import { Route } from 'wouter';
 import './App.css';
-import GifList from './components/GifList';
+import Detail from './pages/Detail';
+import Home from './pages/Home';
+import SearchResults from './pages/SearchResults';
 
 const App = () => {
   return (
     <div className="App">
       <section className="App-content">
-        <h1>App</h1>
-        <Link to='/gif/SNK'>Shingeki No Kiojin Gifs</Link>
-        <Link to='/gif/Blacklist'>The Blacklist Gifs</Link>
-        <Link to='/gif/Suits'>Suits Gifs</Link>
-        <Route path='/gif/:keyword' component={GifList}/>
+        <Route
+          path="/"
+          component={Home}
+        />
+        <Route
+          path="/search/:keyword"
+          component={SearchResults}
+        />
+        <Route
+          path="/gif/:id"
+          component={Detail}
+        />
       </section>
     </div>
   );

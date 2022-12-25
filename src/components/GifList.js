@@ -3,10 +3,9 @@ import { getGifs } from '../services/getGifs';
 import Gif from './Gif';
 import './GifList.css';
 
-const GifList = ({ params }) => {
+const GifList = ({ keyword }) => {
   const [gifs, setGifs] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { keyword } = params;
 
   useEffect(() => {
     const fetchGifs = async () => {
