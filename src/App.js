@@ -1,18 +1,16 @@
-import { useState } from 'react';
+import { Link, Route } from 'wouter';
 import './App.css';
 import GifList from './components/GifList';
 
 const App = () => {
-
-  const [keyword, setKeyword] = useState('rick and morty');
   return (
     <div className="App">
       <section className="App-content">
-        <button
-          onClick={() => setKeyword('colombia')}>
-            Change keyword
-        </button>
-        <GifList keyword={keyword}/>
+        <h1>App</h1>
+        <Link to='/gif/SNK'>Shingeki No Kiojin Gifs</Link>
+        <Link to='/gif/Blacklist'>The Blacklist Gifs</Link>
+        <Link to='/gif/Suits'>Suits Gifs</Link>
+        <Route path='/gif/:keyword' component={GifList}/>
       </section>
     </div>
   );
