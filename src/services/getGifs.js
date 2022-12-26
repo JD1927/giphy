@@ -1,6 +1,6 @@
 const API_KEY = `jI8zZlq3eqqXAM7aqKJrO9y3nV3bYkRN`
 
-export const getGifs = async ({keyword = 'morty'} = {}) => {
+export const getGifs = async ({ keyword }) => {
   const API_URL = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=10&offset=0&rating=g&lang=en`;
   const res = await fetch(API_URL);
   const response = await res.json();
