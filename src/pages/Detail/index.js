@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
-import StaticContext from '../../context/StaticContext';
+import GifsContext from '../../context/GifsContext';
+
 const Detail = ({ params }) => {
-  const context = useContext(StaticContext);
-  console.log(context);
-  const { id } = params
+
+  const { id } = params;
+  const { gifs } = useContext(GifsContext);
+  console.log({gifs});
+
   return <div>{id}</div>;
 };
 
