@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const StaticContext = React.createContext({
   name: 'jd1927 without provider',
