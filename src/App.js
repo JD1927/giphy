@@ -4,6 +4,7 @@ import Detail from './pages/Detail';
 import Home from './pages/Home';
 import SearchResults from './pages/SearchResults';
 import StaticContext from './context/StaticContext';
+import { GifsContextProvider } from './context/GifsContext';
 
 const App = () => {
 
@@ -15,9 +16,11 @@ const App = () => {
     <StaticContext.Provider value={value}>
       <div className="App">
         <section className="App-content">
-          <Route path="/" component={Home} />
-          <Route path="/search/:keyword" component={SearchResults} />
-          <Route path="/gif/:id" component={Detail} />
+          <GifsContextProvider>
+            <Route path="/" component={Home} />
+            <Route path="/search/:keyword" component={SearchResults} />
+            <Route path="/gif/:id" component={Detail} />
+          </GifsContextProvider>
         </section>
       </div>
     </StaticContext.Provider>
