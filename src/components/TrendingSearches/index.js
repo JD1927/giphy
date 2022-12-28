@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getTrendingTerms } from '../../services/getTrendingTerms';
+import { getTrendingTerms } from 'services/getTrendingTerms';
 import Category from '../Category';
 
 const TrendingSearches = () => {

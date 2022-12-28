@@ -1,6 +1,6 @@
 import React from 'react';
-import GifList from '../../components/GifList';
-import useGifs from '../../hooks/useGifs';
+import GifList from 'components/GifList';
+import useGifs from 'hooks/useGifs';
 
 const SearchResults = ({ params }) => {
   const { keyword } = params;
