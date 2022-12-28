@@ -7,7 +7,7 @@ import useGifs from 'hooks/useGifs';
 const Home = () => {
   const [searchValue, setSearchValue] = useState('');
   const [, goToRoute] = useLocation();
-  const { gifs } = useGifs();
+  const { gifs, loading } = useGifs();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,7 +30,7 @@ const Home = () => {
         <button type='submit'>Search</button>
       </form>
       <h3>Last search</h3>
-      <GifList gifs={gifs} />
+      <GifList gifs={gifs} loading={loading} />
       <TrendingSearches/>
     </>
   );
