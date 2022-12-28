@@ -9,7 +9,10 @@ const SearchResults = ({ params }) => {
   if (loading) return <span>Loading... 🌀</span>;
 
   return (
-    <GifList gifs={gifs}/>
+    <>
+      <h3>Results for: {decodeURI(keyword)}</h3>
+      <GifList gifs={gifs}/>
+    </>
   );
 };
 
