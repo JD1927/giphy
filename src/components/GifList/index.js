@@ -1,5 +1,5 @@
 import React from 'react';
-import Gif from './Gif';
+import Gif from '../Gif';
 import './GifList.css';
 
 const GifList = ({ gifs }) => {
