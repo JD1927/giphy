@@ -1,17 +1,19 @@
 .Gif {
+  position: relative;
   display: grid;
   border: 1px solid tomato;
   border-radius: 6px;
   padding: 32px;
   justify-content: center;
   color: inherit;
+  transition: transform 0.3s ease;
 }
 
 .Gif:hover {
-  text-decoration: underline;
+  transform: scale(1.05);
 }
 
-.Gif h4 {
+.Gif small {
   margin-top: 0;
   margin-bottom: 10px;
 }
