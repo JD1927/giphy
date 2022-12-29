@@ -1,7 +1,8 @@
 import { API_KEY, API_URL } from './settings';
 
-export const getGifs = async ({ keyword }) => {
-  const url = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=10&offset=0&rating=g&lang=en`;
+export const getGifs = async ({ limit = 25, keyword = 'morty', page = 0 } = {}) => {
+  const url = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${page * limit}&rating=g&lang=en`;
+
   const res = await fetch(url);
   const response = await res.json();
   const { data } = response;
