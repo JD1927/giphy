@@ -19,7 +19,7 @@ const Home = () => {
     setSearchValue(event.target.value);
   };
   return (
-    <>
+    <div className='Home'>
       <h1 className='Home-title'>Most popular gifs</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -33,7 +33,7 @@ const Home = () => {
       <h3>Last search</h3>
       <GifList gifs={gifs} loading={loading} />
       <TrendingSearches/>
-    </>
+    </div>
   );
 };
 
