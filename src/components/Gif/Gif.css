@@ -20,5 +20,5 @@
 
 .Gif img {
   width: 100%;
-  object-fit: contain;
+  object-fit: fill;
 }

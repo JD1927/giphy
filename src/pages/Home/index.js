@@ -3,6 +3,7 @@ import { useLocation } from 'wouter';
 import GifList from 'components/GifList';
 import TrendingSearches from 'components/TrendingSearches';
 import useGifs from 'hooks/useGifs';
+import './Home.css';
 
 const Home = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -19,7 +20,7 @@ const Home = () => {
   };
   return (
     <>
-      <h1>Most popular gifs</h1>
+      <h1 className='Home-title'>Most popular gifs</h1>
       <form onSubmit={handleSubmit}>
         <input
           placeholder="Let's have fun..."

@@ -2,6 +2,7 @@ import React from 'react';
 import GifList from 'components/GifList';
 import useGifs from 'hooks/useGifs';
 import Spinner from 'components/Spinner';
+import './SearchResults.css';
 
 const SearchResults = ({ params }) => {
   const { keyword } = params;
@@ -10,7 +11,7 @@ const SearchResults = ({ params }) => {
   const handleNextPage = () => setPage(prev => prev + 1);
 
   return (
-    <>
+    <div className='SearchResults'>
       {
         loading
           ? <Spinner/>
@@ -18,11 +19,11 @@ const SearchResults = ({ params }) => {
             <>
               <h3>Results for: {decodeURI(keyword)}</h3>
               <GifList gifs={gifs}/>
-              <button onClick={handleNextPage}>Get next page</button>
+              <button className='SearchResults-button' onClick={handleNextPage}>Get next page</button>
             </>
           )
       }
-    </>
+    </div>
   );
 };
 
