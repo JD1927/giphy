@@ -6,9 +6,13 @@ const GifList = ({ gifs }) => {
   return (
     <div className="GifList">
       {
-        gifs.map(({ id, title, url }) => (
-          <Gif key={id} id={id} title={title} url={url} />
-        ))
+        gifs && gifs.length !== 0 ? (
+          gifs.map(({ id, title, url }) => (
+            <Gif key={id} id={id} title={title} url={url} />
+          ))
+        ) : (
+          <div>There are not gifs...</div>
+        )
       }
     </div>
   );
