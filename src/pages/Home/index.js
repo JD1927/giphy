@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useLocation } from 'wouter';
 import GifList from 'components/GifList';
 import TrendingSearches from 'components/TrendingSearches';
@@ -10,10 +10,10 @@ const Home = () => {
   const [, goToRoute] = useLocation();
   const { gifs, loading } = useGifs();
 
-  const handleSubmit = ({ searchValue }) => {
+  const handleSubmit = useCallback(({ searchValue }) => {
     // Go to another route
     goToRoute(`/search/${searchValue}`);
-  };
+  }, [goToRoute]);
   return (
     <div className='Home'>
       <h1 className='Home-title'>Most popular gifs</h1>
