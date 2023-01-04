@@ -16,7 +16,6 @@ const Home = () => {
   }, [goToRoute]);
   return (
     <div className='Home'>
-      <h1 className='Home-title'>Most popular gifs</h1>
       <SearchForm onSubmit={handleSubmit}/>
       <h3>Last search</h3>
       <GifList gifs={gifs} loading={loading} />
