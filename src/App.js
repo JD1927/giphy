@@ -19,7 +19,7 @@ const App = () => {
           className="App-title"
           onClick={() => goToRoute('/')}
           >
-          GIPHY | JD1927
+          GIPHY by JD1927
         </h1>
         <section className="App-content">
           <GifsContextProvider>
