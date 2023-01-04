@@ -1,0 +1,19 @@
+.SearchForm-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.SearchForm-input {
+  font-size: 1.2rem;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.SearchForm-button {
+  font-size: 1.2rem;
+  background-color: tomato;
+  color: #282c34;
+  padding: 10px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

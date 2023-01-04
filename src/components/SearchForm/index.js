@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SearchForm.css';
 
 const SearchForm = ({ onSubmit }) => {
   const [searchValue, setSearchValue] = useState('');
@@ -6,6 +7,7 @@ const SearchForm = ({ onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Go to another route
+    if (searchValue === '') return;
     onSubmit({searchValue});
   };
   const handleChange = (event) => {
@@ -13,14 +15,20 @@ const SearchForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='SearchForm-form' onSubmit={handleSubmit}>
       <input
+        className='SearchForm-input'
         placeholder="Let's have fun..."
         onChange={handleChange}
         type="text"
         value={searchValue}
       />
-      <button type="submit">Search</button>
+      <button
+        disabled={searchValue === ''}
+        className='SearchForm-button'
+        type="submit">
+        Search
+      </button>
     </form>
   );
 };
