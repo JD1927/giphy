@@ -4,10 +4,12 @@ import './Gif.css';
 
 const Gif = ({ id, title, url }) => {
   return (
-    <Link to={`/gif/${id}`} className='Gif'>
-      <img key={id} src={url} alt={title} />
-      <small>{title}</small>
-    </Link>
+    <div className="Gif">
+      <Link to={`/gif/${id}`} className="Gif-link">
+        <h4>{title}</h4>
+        <img loading='lazy' src={url} alt={title} />
+      </Link>
+    </div>
   );
 };
 

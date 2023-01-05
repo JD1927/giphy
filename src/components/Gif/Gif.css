@@ -1,24 +1,50 @@
 .Gif {
   position: relative;
-  display: grid;
-  border: 1px solid tomato;
-  border-radius: 6px;
-  padding: 32px;
-  justify-content: center;
-  color: inherit;
-  transition: transform 0.3s ease;
+  margin-bottom: 0;
 }
 
-.Gif:hover {
-  transform: scale(1.05);
+.Gif, .Gif-link {
+  height: 100%;
 }
 
-.Gif small {
-  margin-top: 0;
-  margin-bottom: 10px;
+.Gif-link h4 {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  font-size: 12px;
+  color: #fff;
+  background: rgba(0, 0, 0, .3);
+  padding: 5px;
 }
 
-.Gif img {
+.Gif-link img {
+  height: inherit;
   width: 100%;
-  object-fit: fill;
+  object-fit: cover;
+}
+
+.Gif:hover:nth-child(2n) h4 {
+  background-color: #120052;
+}
+.Gif:hover:nth-child(3n) h4 {
+  background-color: #ff0534;
+}
+.Gif:hover:nth-child(2n + 1) h4 {
+  background-color: #fec859;
+  color: #282c34;
+}
+
+.Gif:nth-child(11n + 1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.Gif:nth-child(8n+1) {
+	grid-column-end: span 2;
+	grid-row-end: span 2;
+}
+
+.Gif:nth-child(10n + 3) {
+	grid-column: span 2;
+	grid-row: span 1;
 }

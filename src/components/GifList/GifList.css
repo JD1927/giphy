@@ -1,8 +1,29 @@
+:root {
+  --gridList-column: 250px;
+  --gridList-rows: 250px;
+  --gridList-gap: 6px;
+}
+
 .GifList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--gridList-column), 1fr));
+  grid-auto-rows: var(--gridList-rows);
   grid-template-rows: masonry;
-  gap: 20px;
-  margin-top: 20px;
-  min-height: 100vh;
+  grid-auto-flow: row dense;
+  gap: var(--gridList-gap, 6px);
+  align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    --gridList-column: 180px;
+    --gridList-rows: 200px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  :root {
+    --gridList-column: 300px;
+    --gridList-rows: 210px;
+  }
 }
