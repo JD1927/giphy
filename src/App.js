@@ -7,7 +7,7 @@ import StaticContext from './context/StaticContext';
 import { GifsContextProvider } from './context/GifsContext';
 
 const App = () => {
-  const [,goToRoute] = useLocation();
+  const [, goToRoute] = useLocation();
   const value = {
     name: 'jd1927',
     subscribe: true,
@@ -15,12 +15,11 @@ const App = () => {
   return (
     <StaticContext.Provider value={value}>
       <div className="App">
-        <h1
-          className="App-title"
-          onClick={() => goToRoute('/')}
-          >
-          GIPHY by JD1927
-        </h1>
+        <div className="App-title-container">
+          <h1 className="App-title" onClick={() => goToRoute('/')}>
+            GIPHY by JD1927
+          </h1>
+        </div>
         <section className="App-content">
           <GifsContextProvider>
             <Route path="/" component={Home} />

@@ -1,9 +1,12 @@
 .App {
   text-align: center;
 }
-
+.App-title-container {
+  display: flex;
+  justify-content: center;
+}
 .App-title {
-  color: tomato;
+  color: #fec859;
 }
 
 .App-title:hover {
@@ -12,11 +15,24 @@
 }
 
 .App-content {
-  min-height: 100vh;
   font-size: calc(10px + 2vmin);
 }
 
 .gif-links {
   display: grid;
   justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .App-content {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .App-content {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
 }
