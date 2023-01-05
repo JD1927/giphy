@@ -17,9 +17,15 @@ const Home = () => {
   return (
     <div className='Home'>
       <SearchForm onSubmit={handleSubmit}/>
-      <h3>Last search</h3>
-      <GifList gifs={gifs} loading={loading} />
-      <TrendingSearches/>
+      <div className="Home-container">
+        <div className='Home-GifList'>
+          <h3 className='Home-title'>Last search</h3>
+          <GifList gifs={gifs} loading={loading} />
+        </div>
+        <div className='Home-TrendingSearches'>
+          <TrendingSearches />
+        </div>
+      </div>
     </div>
   );
 };

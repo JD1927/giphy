@@ -1,3 +1,41 @@
 .Home {
   margin: 20px;
 }
+.Home-title {
+  text-align: left;
+}
+.Home-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  grid-template-areas:
+    'gifList gifList'
+    'gifList gifList'
+    'trending trending';
+}
+
+.Home-GifList {
+  grid-area: gifList;
+  width: 100%;
+}
+.Home-TrendingSearches {
+  grid-area: trending;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .Home-container {
+    display: grid;
+    grid-template-columns: 4fr 300px;
+    grid-template-rows: auto;
+    gap: 15px;
+    grid-template-areas:
+      'gifList gifList gifList gifList trending'
+      'gifList gifList gifList gifList trending'
+      'gifList gifList gifList gifList trending';
+  }
+  .Home-TrendingSearches {
+    width: 300px;
+  }
+}
