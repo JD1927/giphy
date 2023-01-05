@@ -5,11 +5,11 @@ import './Category.css';
 const Category = ({ name = '', options = [] }) => {
 
   return (
-    <div className='Category-container'>
-      <h3>{ name }</h3>
+    <div>
+      <h3 className='Category-name'>{ name }</h3>
       <ul className='Category-list'>
         {options.map((popularGif) => (
-          <li key={popularGif}>
+          <li className='Category-item' key={popularGif}>
             <Link to={`/search/${popularGif}`}>{popularGif}</Link>
           </li>
         ))}

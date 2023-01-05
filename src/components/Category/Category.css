@@ -1,5 +1,32 @@
+.Category-name {
+  text-align: end;
+}
+
 .Category-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.Category-item {
+  display: inline-block;
+  padding: 5px;
+  margin-left: 7px;
+  margin-bottom: 7px;
+  border-radius: 4px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.Category-item:hover {
+  transform: scale(1.1);
+}
+.Category-item:nth-child(2n) {
+  background-color: #120052;
+}
+.Category-item:nth-child(3n) {
+  background-color: #ff0534;
+}
+.Category-item:nth-child(2n + 1) {
+  background-color: #fec859;
+  color: #282c34;
 }
