@@ -11,7 +11,8 @@
 }
 .SearchForm-button {
   font-size: 1.2rem;
-  background-color: tomato;
+  font-weight: bold;
+  background-color: #fec859;
   color: #282c34;
   padding: 10px 10px;
   border-top-right-radius: 5px;
