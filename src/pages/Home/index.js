@@ -5,6 +5,7 @@ import TrendingSearches from 'components/TrendingSearches';
 import useGifs from 'hooks/useGifs';
 import './Home.css';
 import SearchForm from 'components/SearchForm';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [, goToRoute] = useLocation();
@@ -15,18 +16,23 @@ const Home = () => {
     goToRoute(`/search/${searchValue}`);
   }, [goToRoute]);
   return (
-    <div className='Home'>
-      <SearchForm onSubmit={handleSubmit}/>
-      <div className="Home-container">
-        <div className='Home-GifList'>
-          <h3 className='Home-title'>Last search</h3>
-          <GifList gifs={gifs} loading={loading} />
-        </div>
-        <div className='Home-TrendingSearches'>
-          <TrendingSearches />
+    <>
+      <Helmet>
+        <title>Home | GIPHY</title>
+      </Helmet>
+      <div className='Home'>
+        <SearchForm onSubmit={handleSubmit}/>
+        <div className="Home-container">
+          <div className='Home-GifList'>
+            <h3 className='Home-title'>Last search</h3>
+            <GifList gifs={gifs} loading={loading} />
+          </div>
+          <div className='Home-TrendingSearches'>
+            <TrendingSearches />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
